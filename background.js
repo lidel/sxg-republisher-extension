@@ -111,11 +111,11 @@ chrome.webRequest.onBeforeRequest.addListener(
     }
     if (path.endsWith('.html')) {
       return {
-        redirectUrl: `https://${gateway}/ipfs/${mapping.sxgCid}${path}.sxg${hash}`
+        redirectUrl: `https://${gateway}/ipfs/${mapping.sxgCid}${path}.sxg${hash}#x-ipfs-companion-no-redirect`
       }
     }
     return {
-      redirectUrl: `https://${gateway}/ipfs/${mapping.assetsCid}${path}${hash}`
+      redirectUrl: `https://${gateway}/ipfs/${mapping.assetsCid}${path}${hash}#x-ipfs-companion-no-redirect`
     }
   },
   // filters
@@ -128,4 +128,3 @@ chrome.webRequest.onBeforeRequest.addListener(
   // extraInfoSpec
   ["blocking"]
 )
-
